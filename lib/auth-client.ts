@@ -5,10 +5,13 @@
 // });
 
 
-import { router } from "better-auth/api"
 import { createAuthClient } from "better-auth/react";
+import { polarClient } from "@polar-sh/better-auth";
 
-const authClient = createAuthClient();
+const authClient = createAuthClient({
+  baseURL: "/",
+  plugins: [polarClient()],//This is correct only if you've configured the Polar plugin on the server:
+});
 
 export const useSession = authClient.useSession;
 
