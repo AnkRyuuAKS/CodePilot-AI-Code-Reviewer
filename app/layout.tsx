@@ -1,6 +1,11 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+// @ts-ignore: Next.js supports global CSS imports in app layout
 import "./globals.css";
+import { ThemeProvider } from "@/components/theme-provider";
+import { Toaster } from "@/components/ui/sonner";
+import { QueryProvider } from "@/providers/query-provider";
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,7 +32,19 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <QueryProvider>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="dark"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <main>
+              {children}
+              <Toaster />
+            </main>
+          </ThemeProvider>
+        </QueryProvider>
       </body>
     </html>
   );
