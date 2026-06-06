@@ -81,6 +81,24 @@ export const connectRepository = async (
 
     //* INCREMENT REPOSITORY COUND FOR USAGE TRACKING
 
+    await incrementRepositoryCount(session.user.id);
+    
+    //* TRIGGER REPOSITORY INDEXING FOR RAG (FIRE AND FORGET)
+    // Fire Inngest event
+    try {
+      await inngest.send({
+        name: "repository.connected",
+        data: {
+          owner,
+          repo,
+          userId: session.user.id,
+        },
+      });
+    } catch (e) {
+      console.error("Failed to send Inngest event:", e);
+    }
+
+
     return {
       success: true,
     };
