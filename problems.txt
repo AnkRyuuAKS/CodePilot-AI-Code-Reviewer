@@ -1,2 +1,0 @@
-improve the ui and ux
-there some problem with the buttons of the delete and delete all in the /dashboard/setting/page.tsx
