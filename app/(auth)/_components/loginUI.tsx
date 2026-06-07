@@ -33,9 +33,11 @@ const loginUI = () => {
           <div className="max-w-xl">
             {/* Logo */}
             <div className="mb-12 flex items-center gap-3">
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-violet-400 to-purple-600 shadow-lg shadow-purple-500/25">
-                <span className="text-lg font-bold">CP</span>
-              </div>
+              <img
+                src="/logos/logo4-rg.png"
+                alt="CodePilot Logo"
+                className="h-12 w-12 object-contain rounded-xl shadow-lg shadow-purple-500/10"
+              />
 
               <span className="text-2xl font-bold tracking-tight">
                 CodePilot
