@@ -140,21 +140,21 @@ export function Header({ className = "" }: HeaderProps) {
                   </div>
                   <DropdownMenuSeparator className="bg-[#40354A]/80" />
                   
-                  <DropdownMenuItem asChild className="rounded-lg hover:bg-white/5 focus:bg-white/5 text-[#F8F7FA]">
+                  <DropdownMenuItem className="rounded-lg hover:bg-white/5 focus:bg-white/5 text-[#F8F7FA]">
                     <Link href="/dashboard/settings" className="flex items-center gap-2.5 px-2 py-2 cursor-pointer">
                       <User size={15} className="text-[#B6AEC3]" />
                       <span>Profile</span>
                     </Link>
                   </DropdownMenuItem>
                   
-                  <DropdownMenuItem asChild className="rounded-lg hover:bg-white/5 focus:bg-white/5 text-[#F8F7FA]">
+                  <DropdownMenuItem className="rounded-lg hover:bg-white/5 focus:bg-white/5 text-[#F8F7FA]">
                     <Link href="/dashboard/settings" className="flex items-center gap-2.5 px-2 py-2 cursor-pointer">
                       <Settings size={15} className="text-[#B6AEC3]" />
                       <span>Settings</span>
                     </Link>
                   </DropdownMenuItem>
                   
-                  <DropdownMenuItem asChild className="rounded-lg hover:bg-white/5 focus:bg-white/5 text-[#F8F7FA]">
+                  <DropdownMenuItem  className="rounded-lg hover:bg-white/5 focus:bg-white/5 text-[#F8F7FA]">
                     <Link href="/dashboard/subscription" className="flex items-center gap-2.5 px-2 py-2 cursor-pointer">
                       <CreditCard size={15} className="text-[#B6AEC3]" />
                       <span>Billing</span>
@@ -196,7 +196,7 @@ export function Header({ className = "" }: HeaderProps) {
           {/* Mobile Navigation Trigger */}
           <div className="md:hidden">
             <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
-              <SheetTrigger asChild>
+              <SheetTrigger >
                 <Button
                   variant="ghost"
                   size="icon-sm"
