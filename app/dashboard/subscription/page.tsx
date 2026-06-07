@@ -17,7 +17,7 @@ import { useQuery } from '@tanstack/react-query';
 import { AlertCircle, Check, ExternalLink, Loader2, RefreshCw, X } from 'lucide-react';
 import { useSearchParams } from 'next/navigation';
 import  { useState,useEffect } from 'react'
-import { PLAN_FEATURES } from '@/CONSTANTS';
+import { PLAN_FEATURES } from '../../../CONSTANTS'; 
 import { getCheckout,customerData } from '@/lib/auth-client';
 import { toast } from 'sonner';
 
