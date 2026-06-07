@@ -42,9 +42,11 @@ const DashboardLayout = async ({
           <header className="sticky top-0 z-20 h-20 border-b border-border/50 bg-background/80 backdrop-blur-md">
             <div className="flex items-center gap-4">
               {/* Logo */}
-              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-violet-500 to-purple-600 text-white font-bold shadow-sm">
-                CP
-              </div>
+              <img
+                src="/logos/logo4-rg.png"
+                alt="CodePilot Logo"
+                className="h-11 w-11 object-contain rounded-xl shadow-sm"
+              />
 
               {/* Brand */}
               <div>
