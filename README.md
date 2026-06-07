@@ -27,69 +27,18 @@ CodePilot is an AI-powered code review platform inspired by tools like CodeRabbi
 
 ## Features
 
-### Authentication & User Management
-
-* Secure GitHub OAuth authentication powered by Better Auth
-* Session management and protected dashboard routes
-* User-specific repository and review management
-* Subscription-aware access control and feature gating
-
-### Repository Integration
-
-* One-click GitHub repository connection
-* Automated GitHub webhook configuration
-* Repository synchronization and management dashboard
-* Support for multiple connected repositories per user
-
-### AI-Powered Code Review
-
-* Automatic pull request review generation
-* Context-aware code analysis using Retrieval-Augmented Generation (RAG)
-* AI-generated summaries, walkthroughs, and actionable feedback
-* Detection of potential bugs, security risks, performance issues, and maintainability concerns
-* Automated review comment posting directly on GitHub pull requests
-
-### Repository Indexing & Semantic Search
-
-* Full repository indexing pipeline
-* Source code chunking and embedding generation
-* Pinecone-powered vector storage and semantic retrieval
-* Context retrieval from the entire codebase for accurate reviews
-* Intelligent code search using vector similarity matching
-
-### Background Processing & Automation
-
-* Event-driven architecture powered by Inngest
-* Asynchronous repository indexing workflows
-* Automated pull request processing pipeline
-* Reliable background job execution and retries
-* Scalable event-based review generation
-
-### Billing & Subscription Management
-
-* Polar-powered subscription and payment processing
-* Free and Pro tier support
-* Usage tracking and repository limits
-* Customer portal for subscription management
-* Secure checkout and billing workflows
-
-### Developer Experience
-
-* Modern Next.js App Router architecture
-* Type-safe backend and frontend with TypeScript
-* Prisma ORM for database management
-* PostgreSQL database integration
-* React Query for efficient client-side data fetching and caching
-* Responsive and modern SaaS dashboard UI
-
-### AI & Infrastructure
-
-* Google Gemini-powered review generation
-* Jina AI vector embeddings for code indexing
-* Pinecone vector database integration
-* GitHub API integration through Octokit
-* Retrieval-Augmented Generation (RAG) architecture for context-aware reviews
-
+- GitHub OAuth Authentication with Better Auth
+- Automated Pull Request Reviews
+- Context-Aware Code Analysis using RAG
+- Repository Indexing with Jina Embeddings
+- Pinecone-Powered Semantic Code Search
+- AI-Generated Review Summaries and Suggestions
+- Automatic GitHub Review Comment Posting
+- Real-Time Background Processing with Inngest
+- Repository Management Dashboard
+- Polar Subscription & Billing Integration
+- Secure Multi-Repository Support
+- Built with Next.js, TypeScript, Prisma, and PostgreSQL
 
 ## How It Works
 
