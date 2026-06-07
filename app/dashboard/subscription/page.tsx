@@ -16,13 +16,31 @@ import { Spinner } from '@/components/ui/spinner';
 import { useQuery } from '@tanstack/react-query';
 import { AlertCircle, Check, ExternalLink, Loader2, RefreshCw, X } from 'lucide-react';
 import { useSearchParams } from 'next/navigation';
-import  { useState,useEffect } from 'react'
-import { PLAN_FEATURES } from '../../../CONSTANTS'; 
-import { getCheckout,customerData } from '@/lib/auth-client';
+import { useState, useEffect } from 'react'
+import { getCheckout, customerData } from '@/lib/auth-client';
 import { toast } from 'sonner';
 
 
 const SubscriptionPage = () => {
+  const PLAN_FEATURES = {
+    free: [
+      { name: "Up to 5 repositories", included: true },
+      { name: "Up to 5 reviews per repository", included: true },
+      { name: "Basic code reviews", included: true },
+      { name: "Community support", included: true },
+      { name: "Advanced analytics", included: false },
+      { name: "Priority support", included: false },
+    ],
+
+    pro: [
+      { name: "Unlimited repositories", included: true },
+      { name: "Unlimited reviews", included: true },
+      { name: "Advanced code reviews", included: true },
+      { name: "Email support", included: true },
+      { name: "Advanced analytics", included: true },
+      { name: "Priority support", included: true },
+    ],
+  };
   const [checkoutLoading, setCheckoutLoading] = useState(false);
   const [portalLoading, setPortalLoading] = useState(false);
   const [syncLoading, setSyncLoading] = useState(false);
@@ -51,7 +69,7 @@ const SubscriptionPage = () => {
     }
   }, [success, refetch]);
 
-  
+
   if (isLoading) {
     return (
       <div className='flex items-center justify-center min-h-100'>
@@ -118,13 +136,13 @@ const SubscriptionPage = () => {
       } else {
         toast.error(result.message || "Failed to sync subscription");
       }
-    }catch (error) {
+    } catch (error) {
       console.error("Sync error:", error);
       toast.error("Failed to sync subscription");
     } finally {
       setSyncLoading(false);
     }
-   }
+  }
 
   const handleUpgrade = async () => {
     try {
@@ -139,7 +157,7 @@ const SubscriptionPage = () => {
     }
   };
 
-  const handleManageSubscription = async() => { 
+  const handleManageSubscription = async () => {
     try {
       setPortalLoading(true);
       await customerData();
