@@ -144,7 +144,7 @@ function DashBoardPage() {
                 <Spinner />
               </div>
             ) : (
-              <div className="h-[400px] w-full border border-red-500">
+              <div className="h-[400px] w-full border">
                 <ResponsiveContainer width={"100%"} height={"100%"}>
                   <BarChart data={monthlyActivity || []}>
                     <CartesianGrid strokeDasharray="3 3" />

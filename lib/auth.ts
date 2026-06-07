@@ -21,6 +21,7 @@ export const auth = betterAuth({
       scope: ["repo"],
     },
   },
+  trustedOrigin:[process.env.NEXT_PUBLIC_APP_BASE_URL,"http://localhost:3000"],
   plugins: [
     polar({
       client: polarClient,
@@ -34,7 +35,7 @@ export const auth = betterAuth({
               slug: "codepilot-pro",
             },
           ],
-          successUrl: process.env.POLAR_SUCCESS_URL!,
+          successUrl: process.env.POLAR_SUCCESS_URL || "http://localhost:3000/dashboard/subscription?success=true",
           authenticatedUsersOnly: true,
         }),
 

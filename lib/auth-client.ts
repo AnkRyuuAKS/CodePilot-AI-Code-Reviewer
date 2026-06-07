@@ -9,7 +9,6 @@ import { createAuthClient } from "better-auth/react";
 import { polarClient } from "@polar-sh/better-auth";
 
 const authClient = createAuthClient({
-  baseURL: "/",
   plugins: [polarClient()],//This is correct only if you've configured the Polar plugin on the server:
 });
 
@@ -24,3 +23,13 @@ export const signIn = async () => {
 export const signOut = async () => {
   return authClient.signOut();
 };
+
+export const getCheckout = async () => {
+  return await authClient.checkout({
+    slug: "codepilot-pro",
+  });
+}
+
+export const customerData = async () => {
+  return  await authClient.customer.portal();// add .state() if needed or add await 
+}
