@@ -10,7 +10,7 @@ export async function reviewPullRequest(
     repo: string,
     prNumber: number
 ) {
-
+    console.log("Reviewing PR:");
     try {
         const repository = await prisma.repository.findFirst({
             where: {
@@ -57,7 +57,7 @@ export async function reviewPullRequest(
                 userId: repository.user.id
             }
         })
-
+        console.log("inngest second function working ");
         await incrementReviewCount(repository.user.id, repository.id);
         
         return { success: true, message: "Review Queued" }

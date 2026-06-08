@@ -11,6 +11,7 @@ export async function POST(req: NextRequest) {
     }
 
     if (event === "pull_request") {
+      console.log("Event: pull_request");
       const action = body.action;
       const repo = body.repository.full_name;
       const prNumber = body.number
@@ -18,6 +19,7 @@ export async function POST(req: NextRequest) {
       const [owner, repoName] = repo.split("/")
       if (action === "opened" || action === "synchronize") {
         try {
+          console.log(`Processing review for ${repo}#${prNumber}`);
           await reviewPullRequest(owner, repoName, prNumber);
 
           console.log(`Review completed for ${repo}#${prNumber}`);

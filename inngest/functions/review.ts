@@ -9,6 +9,7 @@ export const genrateReview = inngest.createFunction(
     { id: "genrate-review", triggers: { event: "pr.review.requested" } },
 
     async ({ event, step }) => {
+        console.log("route comes here");
         const { owner, repo, prNumber, userId } = event.data;
 
         const { diff, title, description, token } = await step.run("fetch-pr-data", async () => {
