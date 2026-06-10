@@ -19,6 +19,9 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "CodePilot : AI-Powered Code Review Assistant",
+  icons: {
+    icon: '/icon.png', // Placed in the public/ folder
+  },
   description: "CodePilot is an AI-powered code review assistant that integrates with your GitHub repositories to provide intelligent feedback, security vulnerability detection, and code quality insights directly in your pull requests. With CodePilot, you can automate code reviews, catch bugs early, and maintain high code quality across your projects.",
 };
 
